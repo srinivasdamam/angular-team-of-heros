@@ -21,6 +21,19 @@ const HEROES: Hero[] = [
 @Component({
     selector: 'my-app',
     template: `<h1>{{title}}</h1>
+    <div *ngIf="selectedHero">
+      <h2>{{selectedHero.name}} Details!</h2>
+      <div class="hero-details">
+        <div>
+          <label>id:</label>
+            {{selectedHero.id}}
+        </div>
+        <div>
+          <label for="name">name:</label>
+          <input id="name" [(ngModel)]="selectedHero.name">
+        </div>
+      </div>
+    </div>
     <h2>My Heros</h2>
     <div>
       <ul class="heroes">
